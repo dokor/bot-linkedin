@@ -20,3 +20,15 @@ def summarize_and_suggest():
             send_post_to_slack(post["url"], summary, comments)
         except Exception as e:
             print(f"Erreur sur post {post['url']}: {e}")
+
+
+def summarize_and_suggest_sync():
+    posts = get_linkedin_feed()
+
+    for post in posts:
+        try:
+            summary = summarize_post(post["text"])
+            comments = generate_comments(summary)
+            send_post_to_slack(post["url"], summary, comments)
+        except Exception as e:
+            print(f"Erreur sur post {post['url']}: {e}")
