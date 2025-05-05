@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai
+slack_sdk
+celery
+redis
+beautifulsoup4
+requests
+playwright
